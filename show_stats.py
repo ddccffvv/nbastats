@@ -1,6 +1,7 @@
 import json, datetime, os
 
 for filename in os.listdir("jsons"):
+    print filename
     f = open("jsons/" + filename)
 
     j = json.load(f)
