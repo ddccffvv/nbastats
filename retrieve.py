@@ -1,4 +1,5 @@
 import requests, json, datetime
+import pprint
 
 f = open("latest", "r")
 
@@ -18,7 +19,7 @@ while True:
     if not datetime.datetime.now() > (gamedate + datetime.timedelta(1)):
         break
     gamefile = open("jsons/" + s_identifier, "w")
-    json.dump(r.json(), gamefile)
+    json.dump(r.json, gamefile)
     gamefile.close()
 
     i_identifier = i_identifier + 1

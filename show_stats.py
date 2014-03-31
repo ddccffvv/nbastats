@@ -1,4 +1,5 @@
 import json, datetime, os
+import re
 
 for filename in os.listdir("jsons"):
     print filename
@@ -16,4 +17,6 @@ for filename in os.listdir("jsons"):
     playerlines = j["resultSets"][4]["rowSet"]
 
     for line in playerlines:
-        print [gamedate, homecode, awaycode] + line[2:]
+        #print line[2:]
+        if re.match(".*den.*", line[2:][3]):
+            print [gamedate, homecode, awaycode] + line[2:]
